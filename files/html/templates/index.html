@@ -1,0 +1,47 @@
+<?php include("templates/header.html"); ?>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<header class="site-header">
+					<h1>Home</h1>
+				</header>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<?php foreach ($article as $value){ ?>
+				<article>
+				<header>
+					<h2><?=htmlspecialchars($value['title'], ENT_QUOTES);?></h2>
+				</header>
+				<div>
+					<p><?=htmlspecialchars($value['content'], ENT_QUOTES);?></p>
+				</div>
+				<footer>
+					<p><a href="edit.php?id=<?=$value['id'];?>">edit</a> <a href="delete.php?id=<?=$value['id'];?>">delete</a></p>
+				</footer>
+				</article>
+				<?php } ?>
+			</div>
+			<div class="col-md-3 col-md-offset-1">
+				<aside>
+					<h3>Recent Posts</h3>
+					<ul>
+						<?php foreach ($article as $value){ ?>
+						<li><a href="#"><?=htmlspecialchars($value['title'], ENT_QUOTES);?></a></li>
+						<?php } ?>
+					</ul>
+				</aside>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<footer class="site-footer">
+					Copyright &copy; 2018
+				</footer>
+			</div>
+		</div>
+	</div>
+
+<?php include("templates/footer.html"); ?>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Register Form</title>
+  <link rel="stylesheet" type="text/css" href="css/login.css" />
+</head>
+<body>
+  <div class="login">
+    <h1>Register Form</h1>
+    <form method="post">
+        <input type="text" name="username" placeholder="Username" required="required" />
+        <input type="password" name="password" placeholder="Password" required="required" />
+        <p style="color:rgb(255,255,255)">substr(md5($verify),0,5)=='<?=$_SESSION['verify'];?>':</p>
+        <input type="text" name="verify" placeholder="verify" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Register</button>
+    </form>
+  </div>
+</body>
+</html>
