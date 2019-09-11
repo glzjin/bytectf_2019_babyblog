@@ -24,4 +24,4 @@ RUN mv -f /tmp/files/sources.list /etc/apt/sources.list \
 
 WORKDIR /var/www/html/
 
-CMD sh -c "echo $FLAG >> /flag && export FLAG=not_flag && FLAG=not_flag && find /var/lib/mysql -type f -exec touch {} \; && service mysql start && apache2-foreground"
+CMD echo $FLAG >> /flag && export FLAG=not_flag && FLAG=not_flag && find /var/lib/mysql -type f -exec touch {} \; && service mysql start && apache2-foreground
